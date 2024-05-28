@@ -1,3 +1,4 @@
+using Config;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,10 +9,22 @@ using UnityEngine.Rendering.VirtualTexturing;
 
 public class GameManager : MonoBehaviour
 {
+    /// <summary>
+    /// 资源组件
+    /// </summary>
+    [Module(1)]
+    public static AssetModule Asset { get => TGameFramework.Instance.GetModule<AssetModule>(); }
+
+    /// <summary>
+    /// 流程组件
+    /// </summary>
 
     [Module(2)]
     public static ProcedureModule Procedure { get => TGameFramework.Instance.GetModule<ProcedureModule>(); }
 
+
+    [Module(3)]
+    public static UIModule UI { get => TGameFramework.Instance.GetModule<UIModule>(); }
 
     [Module(6)]
     public static MessageModule Message { get => TGameFramework.Instance.GetModule<MessageModule>(); }
@@ -39,6 +52,13 @@ public class GameManager : MonoBehaviour
         TGameFramework.Initialize();
         StartupModules();
         TGameFramework.Instance.InitModules();
+        ConfigManager.LoadAllConfigsByAddressable("Assets/BundleAssets/Config");
+        GlobalConfig.InitGlobalConfig();
+        BuffConfig.ParseConfig();
+        SkillConfig.ParseConfig();
+        BulletConfig.ParseConfig();
+        SpellFieldConfig.ParseConfig();
+        I18NConfig.ParseConfig();
     }
 
     private void Start()

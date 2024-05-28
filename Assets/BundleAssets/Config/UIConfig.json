@@ -34,53 +34,60 @@
     "Description": "TaskUI",
     "Asset": "Assets/BundleAssets/UI/TaskUI.prefab",
     "Mode": 0
-  },
+    },
   {
     "ID": 7,
-    "Description": "AgentUI",
-    "Asset": "Assets/Game/UIs/Views/Agents/dev/AgentUI.prefab",
-    "Mode": 0
-  },
-  {
-    "ID": 8,
-    "Description": "CreateLoginUI",
-    "Asset": "Assets/Game/UIs/Views/Login/CreateLoginUI.prefab",
-    "Mode": 0
-  },
-  {
-    "ID": 9,
-    "Description": "MainView",
-    "Asset": "Assets/Game/UIs/Views/Main/MainView.prefab",
-    "Mode": 0
-  },
-  {
-    "ID": 10,
-    "Description": "PlayerView",
-    "Asset": "Assets/Game/UIs/Views/Player/PlayerView.prefab",
-    "Mode": 0
-  },
-  {
-    "ID": 11,
-    "Description": "ShowPowerPropTipView",
-    "Asset": "Assets/Game/UIs/Views/Tips/PropTips/ShowPowerPropTip.prefab",
-    "Mode": 0
-  },
-  {
-    "ID": 12,
-    "Description": "OtherEquipTipUIView",
-    "Asset": "Assets/Game/UIs/Views/Tips/EquipTips/OtherEquipTip.prefab",
-    "Mode": 0
-  },
-  {
-    "ID": 13,
-    "Description": "PropQuickUseTipUIView",
-    "Asset": "Assets/Game/UIs/Views/Tips/PropTips/PropQuickUseTip.prefab",
-    "Mode": 0
-  },
-  {
-    "ID": 14,
-    "Description": "MarketUIView",
-    "Asset": "Assets/Game/UIs/Views/Market/MarketView.prefab",
+    "Description": "TestUIView",
+    "Asset": "Assets/Scripts/HotUpdate/Game/UIs/Views/TestUIView.prefab",
     "Mode": 0
   }
+    //},
+    //{
+    //  "ID": 7,
+    //  "Description": "AgentUI",
+    //  "Asset": "Assets/Game/UIs/Views/Agents/dev/AgentUI.prefab",
+    //  "Mode": 0
+    //},
+    //{
+    //  "ID": 8,
+    //  "Description": "CreateLoginUI",
+    //  "Asset": "Assets/Game/UIs/Views/Login/CreateLoginUI.prefab",
+    //  "Mode": 0
+    //},
+    //{
+    //  "ID": 9,
+    //  "Description": "MainView",
+    //  "Asset": "Assets/Game/UIs/Views/Main/MainView.prefab",
+    //  "Mode": 0
+    //},
+    //{
+    //  "ID": 10,
+    //  "Description": "PlayerView",
+    //  "Asset": "Assets/Game/UIs/Views/Player/PlayerView.prefab",
+    //  "Mode": 0
+    //},
+    //{
+    //  "ID": 11,
+    //  "Description": "ShowPowerPropTipView",
+    //  "Asset": "Assets/Game/UIs/Views/Tips/PropTips/ShowPowerPropTip.prefab",
+    //  "Mode": 0
+    //},
+    //{
+    //  "ID": 12,
+    //  "Description": "OtherEquipTipUIView",
+    //  "Asset": "Assets/Game/UIs/Views/Tips/EquipTips/OtherEquipTip.prefab",
+    //  "Mode": 0
+    //},
+    //{
+    //  "ID": 13,
+    //  "Description": "PropQuickUseTipUIView",
+    //  "Asset": "Assets/Game/UIs/Views/Tips/PropTips/PropQuickUseTip.prefab",
+    //  "Mode": 0
+    //},
+    //{
+    //  "ID": 14,
+    //  "Description": "MarketUIView",
+    //  "Asset": "Assets/Game/UIs/Views/Market/MarketView.prefab",
+    //  "Mode": 0
+    //}
 ]

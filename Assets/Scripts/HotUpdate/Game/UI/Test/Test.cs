@@ -31,7 +31,7 @@ public class TestMessageHandler : MessageHandler<MessageType.TestUIView>
     public async override Task HandleMessage(MessageType.TestUIView arg)
     {
         Debug.Log("µã»÷°´Å¥");
-
+        GameManager.UI.OpenUI(UIViewID.TestUIView);
         await Task.Yield();
     }
 }
