@@ -15,23 +15,30 @@ public class Test : MessageModule
         {
             GameManager.Message.Post<MessageType.TestUIView>(new MessageType.TestUIView() { }).Coroutine();
         });
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
 
 
 public class TestMessageHandler : MessageHandler<MessageType.TestUIView>
 {
+    TestUIMeditor meditor;
     public async override Task HandleMessage(MessageType.TestUIView arg)
     {
         Debug.Log("µã»÷°´Å¥");
-        GameManager.UI.OpenUI(UIViewID.TestUIView);
+        if (meditor != null)
+        {
+            meditor.ViewObject.SetActive(!meditor.ViewObject.activeSelf);
+        }
+        else
+            meditor = GameManager.UI.OpenUI(UIViewID.TestUIView) as TestUIMeditor;
+
         await Task.Yield();
     }
 }

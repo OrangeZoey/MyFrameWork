@@ -29,6 +29,14 @@ public class GameManager : MonoBehaviour
     [Module(6)]
     public static MessageModule Message { get => TGameFramework.Instance.GetModule<MessageModule>(); }
 
+
+    [Module(7)]
+    public static ECSModule ECS { get => TGameFramework.Instance.GetModule<ECSModule>(); }
+
+
+    [Module(97)]
+    public static NetModule Net { get => TGameFramework.Instance.GetModule<NetModule>(); }
+
     private bool activing;
 
     private void Awake() 
@@ -52,6 +60,8 @@ public class GameManager : MonoBehaviour
         TGameFramework.Initialize();
         StartupModules();
         TGameFramework.Instance.InitModules();
+
+        //º”‘ÿ≈‰÷√
         ConfigManager.LoadAllConfigsByAddressable("Assets/BundleAssets/Config");
         GlobalConfig.InitGlobalConfig();
         BuffConfig.ParseConfig();

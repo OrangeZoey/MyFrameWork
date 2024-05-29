@@ -6,9 +6,11 @@ namespace Config
         {
             Newtonsoft.Json.Utilities.AotHelper.EnsureList<GlobalConfig>();
             Newtonsoft.Json.Utilities.AotHelper.EnsureList<CharacterConfig>();
+            Newtonsoft.Json.Utilities.AotHelper.EnsureList<ActiveconsumptionConfig>();
             Newtonsoft.Json.Utilities.AotHelper.EnsureList<CombatFormulaConfig>();
             Newtonsoft.Json.Utilities.AotHelper.EnsureList<PlayerConfig>();
             Newtonsoft.Json.Utilities.AotHelper.EnsureList<BulletConfig>();
+            Newtonsoft.Json.Utilities.AotHelper.EnsureList<EquipConfig>();
             Newtonsoft.Json.Utilities.AotHelper.EnsureList<InterruptStackActionConfig>();
             Newtonsoft.Json.Utilities.AotHelper.EnsureList<BuffConfig>();
             Newtonsoft.Json.Utilities.AotHelper.EnsureList<SkillConfig>();
@@ -41,9 +43,11 @@ namespace Config
         {
             Config.GlobalConfig.DeserializeByAddressable(directory);
             Config.CharacterConfig.DeserializeByAddressable(directory);
+            Config.ActiveconsumptionConfig.DeserializeByAddressable(directory);
             Config.CombatFormulaConfig.DeserializeByAddressable(directory);
             Config.PlayerConfig.DeserializeByAddressable(directory);
             Config.BulletConfig.DeserializeByAddressable(directory);
+            Config.EquipConfig.DeserializeByAddressable(directory);
             Config.InterruptStackActionConfig.DeserializeByAddressable(directory);
             Config.BuffConfig.DeserializeByAddressable(directory);
             Config.SkillConfig.DeserializeByAddressable(directory);
@@ -71,9 +75,11 @@ namespace Config
         {
             Config.GlobalConfig.DeserializeByFile(directory);
             Config.CharacterConfig.DeserializeByFile(directory);
+            Config.ActiveconsumptionConfig.DeserializeByFile(directory);
             Config.CombatFormulaConfig.DeserializeByFile(directory);
             Config.PlayerConfig.DeserializeByFile(directory);
             Config.BulletConfig.DeserializeByFile(directory);
+            Config.EquipConfig.DeserializeByFile(directory);
             Config.InterruptStackActionConfig.DeserializeByFile(directory);
             Config.BuffConfig.DeserializeByFile(directory);
             Config.SkillConfig.DeserializeByFile(directory);
@@ -101,9 +107,11 @@ namespace Config
         {
             yield return Config.GlobalConfig.DeserializeByBundle(directory, subFolder);
             yield return Config.CharacterConfig.DeserializeByBundle(directory, subFolder);
+            yield return Config.ActiveconsumptionConfig.DeserializeByBundle(directory, subFolder);
             yield return Config.CombatFormulaConfig.DeserializeByBundle(directory, subFolder);
             yield return Config.PlayerConfig.DeserializeByBundle(directory, subFolder);
             yield return Config.BulletConfig.DeserializeByBundle(directory, subFolder);
+            yield return Config.EquipConfig.DeserializeByBundle(directory, subFolder);
             yield return Config.InterruptStackActionConfig.DeserializeByBundle(directory, subFolder);
             yield return Config.BuffConfig.DeserializeByBundle(directory, subFolder);
             yield return Config.SkillConfig.DeserializeByBundle(directory, subFolder);

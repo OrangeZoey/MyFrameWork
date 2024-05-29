@@ -80,12 +80,69 @@ boss=头领")]
 
     [ExcellentConfig]
     [Serializable]
+    public class ActiveconsumptionConfig
+    {
+        public string name { get; set; }
+        public int search_type { get; set; }
+        public int color { get; set; }
+        public int isbind { get; set; }
+        public int candiscard { get; set; }
+        public int cansell { get; set; }
+        public int market_cansell { get; set; }
+        public int sellprice { get; set; }
+        public int recycltype { get; set; }
+        public int recyclget { get; set; }
+        public int pile_limit { get; set; }
+        public int isdroprecord { get; set; }
+        public int isbroadcast { get; set; }
+        public int time_length { get; set; }
+        public int invalid_time { get; set; }
+        public int colddown_id { get; set; }
+        public int server_colddown { get; set; }
+        public int client_colddown { get; set; }
+        public int limit_prof { get; set; }
+        public int limit_sex { get; set; }
+        public int limit_level { get; set; }
+        public int use_daytimes { get; set; }
+        public int use_type { get; set; }
+        public int param1 { get; set; }
+        public int param2 { get; set; }
+        public int param3 { get; set; }
+        public int param4 { get; set; }
+        public int other_sex_itemid { get; set; }
+        public string use_msg { get; set; }
+        public string get_msg { get; set; }
+        public int appe_type { get; set; }
+        public string icon_id { get; set; }
+        public int show_id { get; set; }
+        public int click_use { get; set; }
+        public string open_panel { get; set; }
+        public string drop_icon { get; set; }
+        public int bag_type { get; set; }
+        public int is_tip_use { get; set; }
+        public int choose_use { get; set; }
+        public int auto_show_id { get; set; }
+        public int power { get; set; }
+        public int get_way { get; set; }
+        public int is_display_role { get; set; }
+        public int special_show { get; set; }
+        public int is_diruse { get; set; }
+        public int is_texiao { get; set; }
+        public int is_tip_power { get; set; }
+        public int rarefloating { get; set; }
+    }
+
+
+    [ExcellentConfig]
+    [Serializable]
     public class CombatFormulaConfig
     {
         public float CoefficientA { get; set; }
         public float CoefficientB { get; set; }
         public float[] IntervalEvasion { get; set; }
     }
+
+
 
     [ExcellentConfig]
     [Serializable]
@@ -122,6 +179,73 @@ boss=头领")]
         public bool CollideTerrain { get; set; }
         [ConfigArray(3)]
         public string[] CollideTerrainEffects { get; set; }
+    }
+
+    [ExcellentConfig]
+    [Serializable]
+    public class EquipConfig
+    {
+        public string name { get; set; }
+        public System.Int32 search_type { get; set; }
+        public System.Int32 color { get; set; }
+        public System.Int32 isbind { get; set; }
+        public System.Int32 candiscard { get; set; }
+        public System.Int32 cansell { get; set; }
+        public System.Int32 market_cansell { get; set; }
+        public System.Int32 sellprice { get; set; }
+        public System.Int32 recycltype { get; set; }
+        public System.Int32 recyclget { get; set; }
+        public System.Int32 isbroadcast { get; set; }
+        public System.Int32 pile_limit { get; set; }
+        public System.Int32 isdroprecord { get; set; }
+        public System.Int32 time_length { get; set; }
+        public System.Int32 invalid_time { get; set; }
+        public System.Int32 limit_prof { get; set; }
+        public System.Int32 limit_sex { get; set; }
+        public System.Int32 limit_level { get; set; }
+        public System.Int32 equip_level { get; set; }
+        public System.Int32 order { get; set; }
+        public System.Int32 quality { get; set; }
+        public System.Int32 mp { get; set; }
+        public System.Int32 hp { get; set; }
+        public System.Int32 attack { get; set; }
+        public System.Int32 fangyu { get; set; }
+        public System.Int32 mingzhong { get; set; }
+        public System.Int32 shanbi { get; set; }
+        public System.Int32 baoji { get; set; }
+        public string jianren { get; set; }
+        public string ignore_fangyu { get; set; }
+        public System.Int32 hurt_increase { get; set; }
+        public System.Int32 hurt_reduce { get; set; }
+        public System.Int32 per_jingzhun { get; set; }
+        public System.Int32 per_baoji { get; set; }
+        public string per_pofang { get; set; }
+        public System.Int32 per_mianshang { get; set; }
+        public System.Int32 per_pvp_hurt_increase { get; set; }
+        public System.Int32 per_pvp_hurt_reduce { get; set; }
+        public System.Int32 can_strengthen { get; set; }
+        public System.Int32 can_flush { get; set; }
+        public System.Int32 hole_num { get; set; }
+        public System.Int32 suit_id { get; set; }
+        public System.Int32 value5 { get; set; }
+        public System.Int32 shen { get; set; }
+        public System.Int32 other_sex_itemid { get; set; }
+        public System.Int32 appe_type { get; set; }
+        public System.Int32 icon_id { get; set; }
+        public System.Int32 is_tip_use { get; set; }
+        public System.Int32 show_id { get; set; }
+        public System.Int32 click_use { get; set; }
+        public System.Int32 sub_type { get; set; }
+        public System.Int32 drop_icon { get; set; }
+        public System.Int32 bag_type { get; set; }
+        public System.Int32 is_display_role { get; set; }
+        public System.Int32 guild_storage_score { get; set; }
+        public System.Int32 is_rare { get; set; }
+        public System.Int32 show_level { get; set; }
+        public System.Int32 special_show { get; set; }
+        public System.Int32 is_texiao { get; set; }
+        public System.Int32 rarefloating { get; set; }
+        public System.Int32 shield_button { get; set; }
     }
 
     [Serializable]
