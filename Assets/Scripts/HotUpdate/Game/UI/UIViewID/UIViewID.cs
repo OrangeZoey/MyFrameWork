@@ -8,6 +8,7 @@ public enum UIViewID
     KnapsackUI = 5,
     TaskUI = 6,
     TestUIView = 7,
+    TestTWOUIView = 8,
     //AgentUI = 7,
     //CreateLoginUI = 8,
     //MainUIView = 9,

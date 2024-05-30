@@ -9,7 +9,7 @@
         }
         public static long NewInstanceID()
         {
-            return ++currentInstanceID;
+            return ++currentInstanceID; //µ±Ç°ÊµÀýID+1
         }
 
         private static long currentID;

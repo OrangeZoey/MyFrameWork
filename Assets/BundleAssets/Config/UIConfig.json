@@ -40,5 +40,11 @@
     "Description": "TestUIView",
     "Asset": "Assets/Scripts/HotUpdate/Game/UIs/Views/TestUIView.prefab",
     "Mode": 0
+  },
+  {
+    "ID": 8,
+    "Description": "TestTWOUIView",
+    "Asset": "Assets/Scripts/HotUpdate/Game/UIs/Views/TestTWOUIView.prefab",
+    "Mode": 0
   }
 ]

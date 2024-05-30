@@ -111,6 +111,11 @@ public partial class UIModule : BaseGameModule
         //GameManager.Input.SetEnable(true);
     }
 
+    /// <summary>
+    /// 得到对应类型的最顶层UIMode
+    /// </summary>
+    /// <param name="mode"></param>
+    /// <returns></returns>
     private int GetTopMediatorSortingOrder(UIMode mode)
     {
         //用于存储相匹配的最后一个 Mediator
@@ -310,6 +315,8 @@ public partial class UIModule : BaseGameModule
             UIView newView = obj.GetComponent<UIView>();
             mediator.InitMediator(newView);
         })).gameObject;
+       
+
         //处理对象加载完成后的逻辑
         return OnUIObjectLoaded(mediator, uiConfig, uiObject, arg);
     }
@@ -344,12 +351,14 @@ public partial class UIModule : BaseGameModule
         bool loadFinish = false;
         uiObjectPool.LoadGameObjectAsync(uiConfig.Asset, (asset) =>
         {
+            //资源加载完成的回调
             GameObject uiObject = asset.gameObject;
             OnUIObjectLoaded(mediator, uiConfig, uiObject, arg);
             loadFinish = true;
         }, (obj) =>
         {
-            ////获取组件 并初始化
+            //游戏对象加载完成的回调
+            //获取组件 并初始化
             UIView newView = obj.GetComponent<UIView>();
             mediator.InitMediator(newView);
         });

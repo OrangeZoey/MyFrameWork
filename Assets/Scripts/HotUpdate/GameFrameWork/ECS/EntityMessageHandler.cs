@@ -21,7 +21,13 @@ public interface IEntityMessageHandler
         {
             return typeof(M);
         }
-
+        
+        /// <summary>
+        /// 异步发送消息
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="m"></param>
+        /// <returns></returns>
         public async Task Post(ECSEntity entity, M m)
         {
             await HandleMessage(entity, m);

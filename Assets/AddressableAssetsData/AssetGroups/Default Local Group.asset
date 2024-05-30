@@ -27,6 +27,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e00c5514ae381b645b554a6b2bab550b
+    m_Address: Assets/Scripts/HotUpdate/Game/UIs/Views/TestTWOUIView.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: bd6c71ccacae7fb47aba1ea34f8a7bf0, type: 2}
   m_SchemaSet:

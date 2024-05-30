@@ -6,14 +6,20 @@ using UnityEngine.UI;
 
 public class Test : MessageModule
 {
-    public Button Btn;
+    public Button Btn_Test;
+    public Button Btn_TestTWO;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        Btn.onClick.AddListener(() =>
+        Btn_Test.onClick.AddListener(() =>
         {
             GameManager.Message.Post<MessageType.TestUIView>(new MessageType.TestUIView() { }).Coroutine();
+        });
+        Btn_TestTWO.onClick.AddListener(() =>
+        {
+            GameManager.UI.OpenUI(UIViewID.TestTWOUIView);
         });
 
     }
@@ -29,15 +35,22 @@ public class Test : MessageModule
 public class TestMessageHandler : MessageHandler<MessageType.TestUIView>
 {
     TestUIMeditor meditor;
+    bool isOpen;
+
     public async override Task HandleMessage(MessageType.TestUIView arg)
     {
         Debug.Log("µã»÷°´Å¥");
-        if (meditor != null)
+        if (!isOpen)
         {
-            meditor.ViewObject.SetActive(!meditor.ViewObject.activeSelf);
-        }
+            isOpen = true;
+            GameManager.UI.OpenUI(UIViewID.TestUIView);
+        }            
         else
-            meditor = GameManager.UI.OpenUI(UIViewID.TestUIView) as TestUIMeditor;
+        {
+            isOpen = false;
+            GameManager.UI.CloseUI(UIViewID.TestUIView);
+        }
+            
 
         await Task.Yield();
     }
