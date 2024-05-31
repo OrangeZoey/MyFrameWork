@@ -427,7 +427,7 @@ public partial class UIModule : BaseGameModule
         //设置mediator和Canvas的排序顺序
         mediator.SortingOrder = sortingOrder;
         canvas.sortingOrder = sortingOrder;
-
+        
         //激活UI对象并显示
         uiObject.SetActive(true);
         mediator.Show(uiObject, obj);
