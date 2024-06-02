@@ -1,14 +1,14 @@
 using System;
 
  
-    public interface IAwakeSystem : ISystem
+    public interface IAwakeSystem : ISystem//接口继承接口 只是继承定义，不需要实现接口里的方法 
     {
         Type ComponentType();
     }
 
     [ECSSystem]
-    public abstract class AwakeSystem<C> : IAwakeSystem where C : ECSComponent
-    {
+    public abstract class AwakeSystem<C> : IAwakeSystem where C : ECSComponent//类和结构体继承接口，需要实现接口里的方法
+{
         public abstract void Awake(C c);
 
         public Type ComponentType()

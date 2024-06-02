@@ -18,7 +18,7 @@ public class ECSModule : BaseGameModule
     private Dictionary<Type, ILateUpdateSystem> lateUpdateSystemMap;//lateUpdate更新的系统
     private Dictionary<ILateUpdateSystem, List<ECSEntity>> lateUpdateSystemRelatedEntityMap;
 
-    private Dictionary<Type, IFixedUpdateSystem> fixedUpdateSystemMap;////lateUpdate更新的系统
+    private Dictionary<Type, IFixedUpdateSystem> fixedUpdateSystemMap;////FixedUpdate更新的系统
     private Dictionary<IFixedUpdateSystem, List<ECSEntity>> fixedUpdateSystemRelatedEntityMap;
 
     private Dictionary<long, ECSEntity> entities = new Dictionary<long, ECSEntity>();//存储实体
@@ -308,7 +308,7 @@ public class ECSModule : BaseGameModule
     }
 
     /// <summary>
-    /// 
+    /// 对于给定的组件component，找到所有对应的Awake系统并执行它们的Awake逻辑
     /// </summary>
     /// <typeparam name="C">ECSComponent</typeparam>
     /// <param name="component"></param>
@@ -325,6 +325,7 @@ public class ECSModule : BaseGameModule
         bool found = false;
         foreach (var item in list)
         {
+            //转换类型
             AwakeSystem<C> awakeSystem = item as AwakeSystem<C>;
             if (awakeSystem == null)
                 continue;
@@ -348,6 +349,7 @@ public class ECSModule : BaseGameModule
         UpdateSystemEntityList(component.Entity);
 
         List<IAwakeSystem> list = ListPool<IAwakeSystem>.Obtain();
+        //获取AwakeSystems
         TGameFramework.Instance.GetModule<ECSModule>().GetAwakeSystems<C>(list);
 
         bool found = false;
@@ -455,13 +457,17 @@ public class ECSModule : BaseGameModule
     /// <param name="component"></param>
     public void DestroyComponent(ECSComponent component)
     {
+        //更新列表
         UpdateSystemEntityList(component.Entity);
 
         List<IDestroySystem> list = ListPool<IDestroySystem>.Obtain();
+        //获取销毁列表
         GetDestroySystems(component.GetType(), list);
         foreach (var item in list)
         {
+            //销毁
             item.Destroy(component);
+            //释放的布尔值
             component.Disposed = true;
         }
 

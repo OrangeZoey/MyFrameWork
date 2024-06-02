@@ -112,7 +112,7 @@ public partial class UIModule : BaseGameModule
     }
 
     /// <summary>
-    /// 得到对应类型的最顶层UIMode
+    /// 得到对应类型的最顶层UIMode的层级
     /// </summary>
     /// <param name="mode"></param>
     /// <returns></returns>
@@ -409,6 +409,9 @@ public partial class UIModule : BaseGameModule
 
         //设置Canvas的渲染模式和父对象
         Canvas canvas = uiObject.GetComponent<Canvas>();
+        //一个对象可能存在多个Canvas
+        //var canvasCompoent= uiObject.GetComponentsInChildren<Canvas>();
+
         canvas.renderMode = RenderMode.ScreenSpaceCamera;
         //canvas.worldCamera = GameManager.Camera.uiCamera;
 
@@ -427,6 +430,12 @@ public partial class UIModule : BaseGameModule
         //设置mediator和Canvas的排序顺序
         mediator.SortingOrder = sortingOrder;
         canvas.sortingOrder = sortingOrder;
+
+        //将身上所有Canvas改变
+        //for (int i = 0; i < canvasCompoent.Length; i++)
+        //{
+        //    canvasCompoent[i].sortingOrder += sortingOrder;
+        //}
         
         //激活UI对象并显示
         uiObject.SetActive(true);

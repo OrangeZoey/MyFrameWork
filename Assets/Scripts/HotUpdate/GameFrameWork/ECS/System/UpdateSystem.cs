@@ -1,7 +1,7 @@
  
     public interface IUpdateSystem
     {
-        bool ObservingEntity(ECSEntity entity);
+        bool ObservingEntity(ECSEntity entity);//是否观察实体
         void Update(ECSEntity entity);
     }
 
