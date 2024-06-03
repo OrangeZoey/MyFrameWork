@@ -22,7 +22,29 @@ public class Test : MessageModule
             GameManager.UI.OpenUI(UIViewID.TestTWOUIView);
         });
 
+        var result = GetGroupTicketPrice(1);
+        Debug.Log(result); 
+        var result2 = Classify(13);
+        Debug.Log(result2);
     }
+
+    public static decimal GetGroupTicketPrice(int visitorCount) => visitorCount switch
+    {
+        1 => 12.0m,
+        2 => 20.0m,
+        3 => 27.0m,
+        0 => 0m,
+        _ => throw new System.Exception($"一次只能团购1/2/3张票")
+
+    };
+    public static string Classify(double measurement) => measurement switch
+    {
+        < -4.0 => "Too low",
+        > 10.0 => "Too high",
+        double.NaN => "Unknow",
+        _ => "Acceptable,"
+
+    };
 
     // Update is called once per frame
     void Update()
@@ -44,13 +66,13 @@ public class TestMessageHandler : MessageHandler<MessageType.TestUIView>
         {
             isOpen = true;
             GameManager.UI.OpenUI(UIViewID.TestUIView);
-        }            
+        }
         else
         {
             isOpen = false;
             GameManager.UI.CloseUI(UIViewID.TestUIView);
         }
-            
+
 
         await Task.Yield();
     }
